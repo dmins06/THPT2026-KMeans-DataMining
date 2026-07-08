@@ -242,7 +242,7 @@ THPT2026-KMeans-DataMining/
 
 │
 ├── data/
-│   └── DiemThi_THPT2026.csv
+│   └── DiemThi_THPTQG2026.csv
 │
 ├── notebooks/
 │   └── DataMining_THPT2026.ipynb
