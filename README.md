@@ -1,48 +1,56 @@
 # 📊 THPT2026-KMeans-DataMining
 
-> Data Mining, Feature Engineering, and K-Means Clustering of the 2026 Vietnamese High School Graduation Examination Dataset.
-
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-orange)
-![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-1.7-green)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+> **Data Mining and K-Means Clustering of the 2026 Vietnamese High School Graduation Examination Dataset**
 
 ---
 
 ## 📖 Overview
 
-This project applies **Data Mining** techniques to analyze the **2026 Vietnamese High School Graduation Examination** dataset containing more than **1 million student records**.
+This project applies **Data Mining** techniques to analyze the **2026 Vietnamese High School Graduation Examination** dataset containing more than **1 million candidate records**.
 
-The project focuses on discovering hidden patterns in examination results through **unsupervised learning**, specifically using the **K-Means clustering algorithm**.
+The primary objective is to discover hidden patterns in examination results through **unsupervised learning**, using the **K-Means clustering algorithm**.
 
-Instead of predicting admission scores, this project aims to identify different groups of students based on their academic performance and examination characteristics.
+The project includes data preprocessing, feature engineering, clustering, dimensionality reduction, visualization, and cluster analysis.
 
 ---
 
-## 🎯 Objectives
+## ⚠️ Disclaimer
+
+This repository is published for **academic research, educational demonstration, and portfolio purposes only**.
+
+The source code is provided for learning and reference.
+
+**Unauthorized copying, modification, redistribution, or commercial use of this project is strictly prohibited without prior written permission from the author.**
+
+---
+
+# 🎯 Objectives
+
+The project aims to:
 
 - Clean and preprocess raw examination data
-- Perform feature engineering
+- Handle missing values
+- Generate additional analytical features
 - Calculate multiple university admission combinations
-- Standardize numerical features
-- Determine the optimal number of clusters using the Elbow Method
-- Cluster students using K-Means
-- Visualize clusters using Incremental PCA
+- Normalize numerical features
+- Determine the optimal number of clusters
+- Cluster candidates using K-Means
+- Visualize clustering results using Incremental PCA
 - Analyze characteristics of each cluster
-- Export clustering results for further analysis
+- Export clustering reports
 
 ---
 
-## 📂 Dataset
+# 📂 Dataset
 
-The dataset contains over **1,000,000** examination records collected from the 2026 Vietnamese High School Graduation Examination.
+The dataset contains over **1,000,000 Vietnamese candidates** participating in the **2026 High School Graduation Examination**.
 
-Example attributes include:
+The dataset includes:
 
 - Candidate ID
 - Mathematics
 - Literature
-- English
+- Foreign Language
 - Physics
 - Chemistry
 - Biology
@@ -51,108 +59,117 @@ Example attributes include:
 - Civic Education
 - Informatics
 - Technology
-- Foreign Languages (N1, N2, N3...)
 - Province
-- Examination Block
+- Examination Subjects
 
-Additional features were generated during preprocessing.
+Additional features are generated during preprocessing.
 
 ---
 
-## ⚙️ Data Preprocessing
+# ⚙️ Data Preprocessing
 
-The preprocessing pipeline includes:
+The preprocessing workflow consists of:
 
 - Removing unnecessary columns
 - Handling missing values
-- Converting data types
-- Calculating total scores
-- Calculating average scores
-- Counting subjects taken
-- Counting subjects with scores ≥ 8
-- Counting subjects with scores ≥ 9
-- Calculating the highest admission combination
-- Determining the strongest admission block
-- Feature normalization using StandardScaler
+- Data type conversion
+- Feature engineering
+- Score normalization
+- Admission combination calculation
+
+Generated features include:
+
+- Average Score
+- Total Score
+- Number of Subjects
+- Maximum Score
+- Minimum Score
+- Number of Scores ≥ 8
+- Number of Scores ≥ 9
+- Number of Passing Subjects
+- Best Admission Combination
+- Maximum Admission Combination Score
 
 ---
 
-## 🎓 Admission Combinations
+# 🎓 University Admission Combinations
 
-The project automatically computes more than **30 university admission combinations**, including:
+The project automatically calculates more than **30 admission combinations**, including:
 
 - A00
 - A01
 - A02
 - B00
 - C00
+- C03
 - D01
 - D07
 - D14
 - D15
-- C03
 - ...
 
-For every candidate, the project determines:
+For every candidate, the system determines:
 
-- Highest admission combination
+- Best admission combination
 - Maximum admission score
 
 ---
 
-## 🤖 Machine Learning Pipeline
+# 🤖 Machine Learning Pipeline
 
-```
-Raw Dataset
-      │
-      ▼
+```text
+Raw Examination Dataset
+            │
+            ▼
 Data Cleaning
-      │
-      ▼
+            │
+            ▼
 Feature Engineering
-      │
-      ▼
+            │
+            ▼
 Feature Scaling
-      │
-      ▼
+            │
+            ▼
 Elbow Method
-      │
-      ▼
+            │
+            ▼
 K-Means Clustering
-      │
-      ▼
+            │
+            ▼
 Incremental PCA
-      │
-      ▼
+            │
+            ▼
 Cluster Analysis
-      │
-      ▼
+            │
+            ▼
 Export Results
 ```
 
 ---
 
-## 📊 Features Used for Clustering
+# 📊 Features Used for Clustering
 
-The K-Means model was trained using engineered numerical features:
+The K-Means algorithm uses the following engineered numerical features:
 
-- AVG_SCORE
-- TOTAL_SCORE
-- NUM_SUBJECT
-- MAX_SCORE
-- MIN_SCORE
-- NUM_SCORE_8
-- NUM_SCORE_9
-- NUM_SCORE_PASS
-- MAX_COMB_SCORE
+| Feature |
+|----------|
+| AVG_SCORE |
+| TOTAL_SCORE |
+| NUM_SUBJECT |
+| MAX_SCORE |
+| MIN_SCORE |
+| NUM_SCORE_8 |
+| NUM_SCORE_9 |
+| NUM_SCORE_PASS |
+| MAX_COMB_SCORE |
 
 ---
 
-## 🧠 Algorithms
+# 🧠 Algorithms
 
-### K-Means
+## K-Means Clustering
 
-The primary clustering algorithm used in this project.
+K-Means is the primary clustering algorithm used to group candidates with similar examination characteristics.
 
 Advantages:
 
@@ -163,11 +180,11 @@ Advantages:
 
 ---
 
-### Elbow Method
+## Elbow Method
 
 Used to determine the optimal number of clusters.
 
-The optimal value selected:
+Selected value:
 
 ```
 K = 5
@@ -175,38 +192,38 @@ K = 5
 
 ---
 
-### Incremental PCA
+## Incremental PCA
 
-Since the dataset contains more than one million records, **Incremental PCA** was used instead of standard PCA for visualization.
+Because the dataset contains over **1 million candidates**, **Incremental PCA** is used instead of traditional PCA.
 
 Benefits:
 
 - Lower memory usage
-- Suitable for large datasets
-- Similar results to traditional PCA
+- Faster processing on large datasets
+- Efficient visualization
 
 ---
 
-## 📈 Cluster Analysis
+# 📈 Cluster Analysis
 
-Each cluster represents a group of students with similar examination performance.
+Each cluster represents candidates with similar academic performance.
 
-Typical analysis includes:
+The project analyzes:
 
+- Cluster size
 - Average score
 - Total score
-- Strongest admission combination
-- Preferred foreign language
-- Cluster size
-- Academic performance level
+- Best admission combination
+- Foreign language selection
+- Academic performance characteristics
 
 ---
 
-## 📦 Output Files
+# 📦 Output Files
 
 After execution, the project generates:
 
-```
+```text
 KetQua_PhanCum_THPT2026.xlsx
 
 Cluster_Center.xlsx
@@ -222,7 +239,7 @@ standard_scaler.pkl
 
 ---
 
-## 🛠️ Technologies
+# 🛠 Technologies
 
 - Python 3.12
 - Pandas
@@ -235,41 +252,47 @@ standard_scaler.pkl
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
-THPT2026-KMeans-DataMining/
-
+```text
+THPT2026-KMeans-DataMining
 │
-├── data/
+├── data
 │   └── DiemThi_THPTQG2026.csv
 │
-├── notebooks/
+├── notebooks
 │   └── DataMining_THPT2026.ipynb
 │
-├── outputs/
-│   ├── PCA_Result.csv
-│   ├── Cluster_Center.xlsx
+├── outputs
 │   ├── KetQua_PhanCum_THPT2026.xlsx
+│   ├── Cluster_Center.xlsx
+│   ├── PCA_Result.csv
 │   └── IncrementalPCA_KMeans.png
 │
-├── models/
+├── models
 │   ├── kmeans_model.pkl
 │   └── standard_scaler.pkl
 │
 ├── requirements.txt
+│
 │
 └── README.md
 ```
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/THPT2026-KMeans-DataMining.git
+git clone https://github.com/your-username/THPT2026-KMeans-DataMining.git
+```
+
+Go to the project directory
+
+```bash
+cd THPT2026-KMeans-DataMining
 ```
 
 Install dependencies
@@ -278,7 +301,7 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Run the notebook
+Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
@@ -286,44 +309,77 @@ jupyter notebook
 
 ---
 
-## 📊 Future Improvements
+# 📈 Future Improvements
 
-Possible extensions include:
+Potential future work includes:
 
-- DBSCAN clustering
+- DBSCAN Clustering
 - Hierarchical Clustering
-- Gaussian Mixture Models
-- Admission score prediction
-- University recommendation system
-- Interactive dashboard
-- Web deployment
+- Gaussian Mixture Models (GMM)
+- Candidate Recommendation System
+- Admission Score Prediction
+- Interactive Dashboard
+- Web-based Application
 
 ---
 
-## 📄 Copyright
+# 👨‍💻 Author
 
-Copyright © 2026 Dmin
+**Le Hoang Duy Minh - Diminn**
 
-This project is published on GitHub for educational and portfolio purposes only.
+**Undergraduate Student in Data Science and Artificial Intelligence**
 
-The source code may be viewed for learning and reference purposes.
-
-No permission is granted to copy, modify, redistribute, or use this project, in whole or in part, without prior written permission from the author.
-
----
-
-## 👨‍💻 Author
-
-**Le Hoang Duy Minh**
-
-Information Systems Student
-
-University of Transport Ho Chi Minh City
+Ho Chi Minh City University of Transport (UTH)
 
 Vietnam
 
 ---
 
-## ⭐ Acknowledgements
+# 📬 Contact
 
-Special thanks to the Vietnamese High School Graduation Examination dataset and the open-source Python ecosystem, including Pandas, Scikit-learn, NumPy, and Matplotlib, for enabling large-scale educational data analysis.
+For questions, suggestions, or collaboration, please contact the author via GitHub.
+
+---
+
+# 📚 Citation
+
+If this project contributes to your research or academic work, please cite the repository instead of copying the source code.
+
+Author:
+
+**Le Hoang Duy Minh**
+
+Project:
+
+**THPT2026-KMeans-DataMining**
+
+Year:
+
+**2026**
+
+---
+
+# 🙏 Acknowledgements
+
+This project was developed as an academic Data Mining project using publicly available examination data.
+
+Special thanks to the open-source Python community and the following libraries:
+
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- OpenPyXL
+- Joblib
+
+---
+
+# 📄 Copyright
+
+Copyright © 2026 Diminn
+
+All rights reserved.
+
+This repository is provided for educational and reference purposes only.
+
+No permission is granted to copy, modify, redistribute, publish, or use this project, in whole or in part, without prior written permission from the author.
