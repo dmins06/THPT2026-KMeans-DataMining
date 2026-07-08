@@ -300,15 +300,21 @@ Possible extensions include:
 
 ---
 
-## 📄 License
+## 📄 Copyright
 
-This project is released under the MIT License.
+Copyright © 2026 Dmin
+
+This project is published on GitHub for educational and portfolio purposes only.
+
+The source code may be viewed for learning and reference purposes.
+
+No permission is granted to copy, modify, redistribute, or use this project, in whole or in part, without prior written permission from the author.
 
 ---
 
 ## 👨‍💻 Author
 
-**Minh Le Hoang Duy**
+**Le Hoang Duy Minh**
 
 Information Systems Student
 
